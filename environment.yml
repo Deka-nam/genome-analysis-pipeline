@@ -1,4 +1,4 @@
-name: proteus_env
+name: proteus_genome_analyse_env
 channels:
   - bioconda
   - conda-forge
@@ -10,7 +10,7 @@ dependencies:
   - roary
   - kraken2
   - mlst
-  - raxml
+  - raxml-ng
   - ncbi-amrfinderplus
   - pandas
   - matplotlib
