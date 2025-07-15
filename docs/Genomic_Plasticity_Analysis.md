@@ -1,17 +1,24 @@
 # Genomic Plasticity Analysis - Full Protocol
 
-## 1. Mobile Genetic Elements (MGEs)
+*Proteus mirabilis* exhibits high genomic plasticity through mobile genetic elements (MGEs) and horizontal gene transfer. Key analyses include:
+
+## Mobile Genetic Elements (MGEs)
 
 ### Tools
-- [ABRicate](https://github.com/tseemann/abricate)
-- [ISEScan](https://github.com/xiezhq/ISEScan)
-- [PHASTER](http://phaster.ca)
+- [ABRicate](https://github.com/tseemann/abricate) : Plasmids/Integrons
+- [ISEScan](https://github.com/xiezhq/ISEScan) : IS
+- [PHASTER](http://phaster.ca) : Prophages
 
 ### Commands
 ```bash
 abricate --db plasmidfinder,resfinder,vfdb genome.fasta > mge_results.tsv
 isescan.py --seqfile genome.fasta --output IS_results --nthread 4
 curl -F 'file=@genome.fasta' 'http://phaster.ca/submissions' > phaster.json
+```
+## ISEScan Fails Troubleshooting
+```bash
+repeatmasker -species bacteria genome.fasta
+```
 
 ### Interpretation Table
 
