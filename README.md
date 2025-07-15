@@ -1,10 +1,5 @@
-# genome-analysis-pipeline
-A curated repository of my bioinformatics work: genome assembly, annotation, AMR analysis, and data visualization
-
----
-# Genome Analysis of *Proteus mirabilis* Clinical Isolates
-
-This repository contains a complete workflow for analyzing *Proteus mirabilis* clinical isolates obtained from catheterized urine samples. The pipeline includes species identification, MLST typing, genome assembly, annotation, pangenome analysis, phylogenetic reconstruction, and antimicrobial resistance (AMR) gene profiling.
+# Genome Analysis Pipeline for *Proteus mirabilis*
+This repository hosts a reproducible workflow for analyzing *P. mirabilis* clinical isolates from catheterized urine samples. The pipeline spans assembly, annotation, AMR detection, pan-genome, phylogeny, and genomic plasticity.
 
 ---
 
@@ -22,90 +17,28 @@ This pipeline was developed to characterize clinical isolates from catheterized 
 
 ---
 
-# Pipeline Components
+## Overview of Steps
 
-# 1. **Species Identification**
-- **Tool**: [Kraken2 v2.1.2](https://ccb.jhu.edu/software/kraken2/)
-- **Command**:
-  ```bash
-  kraken2 --db kraken2-db --threads 8 --paired sample_R1.fastq.gz sample_R2.fastq.gz --report kraken_report.txt --output kraken_output.txt
-  ```
----
+| Step | Module | Description |
+|------|--------|-------------|
+| 1 | [Species ID](docs/phylogenetics_workflow.md) | Kraken2 taxonomic classification |
+| 2 | [Assembly](#2-genome-assembly) | SPAdes for de novo assembly |
+| 3 | [Annotation](#3-genome-annotation) | Prokka functional annotation |
+| 4 | [MLST](#4-mlst-typing) | Multi-locus sequence typing |
+| 5 | [Pan-genome](#5-pangenome-analysis) | Roary & Panaroo |
+| 6 | [Phylogeny](#6-phylogenetic-tree-construction) | RAxML tree building |
+| 7 | [AMR](#7-amr-gene-detection) | AMRFinderPlus profiling |
+| 8 | [Genomic Plasticity](docs/Genomic_Plasticity_Analysis.md) | MGEs, prophages, SVs, HGT |
 
-# 3. **Genome Assembly**
-- **Tool**: [SPAdes v3.15.5](https://cab.spbu.ru/software/spades/)
-- **Command**:
 
-  ```bash
-  spades.py -1 sample_R1.fastq.gz -2 sample_R2.fastq.gz -o spades_output
-  ```
-  ---
-
-# 3. **MLST Typing**
-- **Tool**: [mlst](https://github.com/tseemann/mlst)
-- **Command**:
-  ```bash
-  mlst contigs.fasta
-  ```
----
-
-# 4. **Genome Annotation**
-
-- **Tool**: [Prokka v1.14.6](https://github.com/tseemann/prokka)
-- **Command**:
-
-  ```bash
-  prokka --outdir prokka_output --prefix sample spades_output/contigs.fasta
-  ```
----
-
-# 5. **Pangenome Analysis**
-
-- **Tool**: [Roary v3.13.0](https://sanger-pathogens.github.io/Roary/)
-- **Command**:
-
-  ```bash
-  roary -e --mafft -p 8 *.gff
-  ```
-  
-  ---
- 
-# 6. **Phylogenetic Tree Construction**
-- **Tool**: [RAxML v8.2.12](https://cme.h-its.org/exelixis/web/software/raxml/)
-- **Command**:
-
-  ```bash
-  raxmlHPC -s core_gene_alignment.aln -n tree -m GTRGAMMA -p 12345 -# 100
-  ```
- ---
- 
-# 7. **AMR Gene Detection**
-
-- **Tool**: [AMRFinderPlus v3.10.23](https://github.com/ncbi/amr)
-- **Command**:
-
-  ```bash
-  amrfinder -n contigs.fasta -o amrfinder_output.tsv --organism Proteus_mirabilis
-  ```
-  
----
-
-##  Example Outputs
-
-- Kraken-based species ID report confirming *P. mirabilis*
-- MLST distribution across isolates
-- Core genome phylogenetic tree
-- AMR gene presence-absence heatmap
-
----
-
-## Reproducibility
+## Reproducibility/Quick Start
 
 You can recreate the analysis environment using:
 
 ```bash
 conda env create -f environment.yml
 conda activate proteus_env
+jupyter notebook one_isolate_workflow.ipynb
 ```
 
 ---
