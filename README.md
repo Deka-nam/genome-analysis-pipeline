@@ -22,12 +22,12 @@ This pipeline was developed to characterize clinical isolates from catheterized 
 | Step | Module | Description |
 |------|--------|-------------|
 | 1 | [Species ID](docs/phylogenetics_workflow.md) | Kraken2 taxonomic classification |
-| 2 | [Assembly](#2-genome-assembly) | SPAdes for de novo assembly |
-| 3 | [Annotation](#3-genome-annotation) | Prokka functional annotation |
-| 4 | [MLST](#4-mlst-typing) | Multi-locus sequence typing |
-| 5 | [Pan-genome](#5-pangenome-analysis) | Roary & Panaroo |
-| 6 | [Phylogeny](#6-phylogenetic-tree-construction) | RAxML tree building |
-| 7 | [AMR](#7-amr-gene-detection) | AMRFinderPlus profiling |
+| 2 | [Assembly](docs/phylogenetics_workflow.md) | SPAdes for de novo assembly |
+| 3 | [Annotation](docs/phylogenetics_workflow.md) | Prokka functional annotation |
+| 4 | [MLST](docs/phylogenetics_workflow.md) | Multi-locus sequence typing |
+| 5 | [Pan-genome](docs/phylogenetics_workflow.md) | Roary|
+| 6 | [Phylogeny](docs/phylogenetics_workflow.md) | RAxML tree building |
+| 7 | [AMR](docs/amr_profiling.md) | AMRFinderPlus profiling |
 | 8 | [Genomic Plasticity](docs/Genomic_Plasticity_Analysis.md) | MGEs, prophages, SVs, HGT |
 
 
