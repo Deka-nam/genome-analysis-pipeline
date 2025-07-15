@@ -10,7 +10,15 @@ This repository contains a complete workflow for analyzing *Proteus mirabilis* c
 
 # Project Overview
 
-*Proteus mirabilis* is a common uropathogen associated with catheter-associated urinary tract infections (CAUTIs). In this study, we analyzed the genomic diversity, pangenome structure, phylogenetic relationships, and resistance gene profiles of clinical isolates using a modular bioinformatics pipeline.
+*Proteus mirabilis* is a leading cause of catheter-associated urinary tract infections (CAUTIs), exhibiting:
+- High genomic plasticity
+- Complex antimicrobial resistance (AMR) profiles
+- Distinct phylogenetic clusters in clinical settings
+
+This pipeline was developed to characterize clinical isolates from catheterized urine samples, revealing:
+- Strain diversity patterns
+- Mobile genetic elements
+- Resistance gene associations
 
 ---
 
