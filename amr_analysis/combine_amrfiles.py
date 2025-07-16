@@ -34,7 +34,7 @@ for file in glob.glob(file_path):
         print(f"Column '% Identity to reference sequence' not found in file: {file}")
 
 # Save the merged dataframe to a new file
-merged_df.to_csv("amr_combined.tsv", sep="\t", index=False) #I wanted a .csv file to work in my local computer 
+merged_df.to_csv("amr_combined.tsv", sep="\t", index=False) #I wanted a .csv file to work in my local computer, generate heatmaps
 
 print("AMR files successfully combined.")
 
