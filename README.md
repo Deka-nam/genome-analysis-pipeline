@@ -21,14 +21,14 @@ This pipeline was developed to characterize clinical isolates from catheterized 
 
 | Step | Module | Description |
 |------|--------|-------------|
-| 1 | [Species ID](docs/phylogenetics_workflow.md) | Kraken2 taxonomic classification |
-| 2 | [Assembly](docs/phylogenetics_workflow.md) | SPAdes for de novo assembly |
-| 3 | [Annotation](docs/phylogenetics_workflow.md) | Prokka functional annotation |
-| 4 | [MLST](docs/phylogenetics_workflow.md) | Multi-locus sequence typing |
-| 5 | [Pan-genome](docs/phylogenetics_workflow.md) | Roary|
-| 6 | [Phylogeny](docs/phylogenetics_workflow.md) | RAxML tree building |
-| 7 | [AMR](docs/amr_profiling.md) | AMRFinderPlus profiling |
-| 8 | [Genomic Plasticity](docs/Genomic_Plasticity_Analysis.md) | MGEs, prophages, SVs, HGT |
+| 1 | [Species ID](phylogeny/phylogenetics_workflow.md) | Kraken2 taxonomic classification |
+| 2 | [Assembly](phylogeny/phylogenetics_workflow.md) | SPAdes for de novo assembly |
+| 3 | [Annotation](phylogeny/phylogenetics_workflow.md) | Prokka functional annotation |
+| 4 | [MLST](phylogeny/phylogenetics_workflow.md) | Multi-locus sequence typing |
+| 5 | [Pan-genome](phylogeny/phylogenetics_workflow.md) | Roary|
+| 6 | [Phylogeny](phylogeny/phylogenetics_workflow.md) | RAxML tree building |
+| 7 | [AMR](phylogeny/amr_profiling.md) | AMRFinderPlus profiling |
+| 8 | [Genomic Plasticity](phylogeny/Genomic_Plasticity_Analysis.md) | MGEs, prophages, SVs, HGT |
 
 
 ## Reproducibility/Quick Start
